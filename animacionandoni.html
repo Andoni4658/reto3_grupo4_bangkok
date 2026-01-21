@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fábrica - Ensamblaje de Coche</title>
     <style>
+        /*Configuración del fondo y tipografía */
         body {
             margin: 0;
             padding: 20px;
@@ -13,6 +14,7 @@
             overflow-x: hidden;
         }
 
+        /*CONTENEDOR PRINCIPAL DE LA FÁBRICA Caja que contiene toda la animación*/
         .fabrica {
             position: relative;
             width: 100%;
@@ -25,6 +27,7 @@
             overflow: hidden;
         }
 
+        /*TÍTULO PRINCIPAL*/
         .titulo {
             text-align: center;
             font-size: 24px;
@@ -32,7 +35,7 @@
             margin-bottom: 10px;
         }
 
-        /* Cinta transportadora */
+        /*CINTA TRANSPORTADORA Base gris que se mueve continuamente*/
         .cinta {
             position: absolute;
             bottom: 100px;
@@ -44,7 +47,7 @@
             border-bottom: 3px solid #444;
         }
 
-        /* Líneas de la cinta */
+        /*LÍNEAS ANIMADAS DE LA CINTA Patrón repetitivo que simula movimiento (esta echo con IA)*/
         .cinta-lineas {
             position: absolute;
             width: 200%;
@@ -59,12 +62,13 @@
             animation: moverCinta 3s linear infinite;
         }
 
+        /* Animación de movimiento continuo de la cinta */
         @keyframes moverCinta {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
         }
 
-        /* Contenedor del coche */
+        /*CONTENEDOR DEL COCHE Posición central donde se ensambla*/
         .coche {
             position: absolute;
             bottom: 180px;
@@ -72,7 +76,7 @@
             transform: translateX(-50%);
         }
 
-        /* Carrocería - aparece primero */
+        /*CARROCERÍA DEL COCHE Primera pieza que aparece (paso 1)*/
         .carroceria {
             width: 120px;
             height: 40px;
@@ -84,7 +88,7 @@
             animation-delay: 1s;
         }
 
-        /* Techo - aparece segundo */
+        /*TECHO DEL COCHE Segunda pieza que cae desde arriba (paso 2)*/
         .techo {
             width: 60px;
             height: 25px;
@@ -99,7 +103,7 @@
             animation-delay: 2.5s;
         }
 
-        /* Ventanas - aparecen con el techo */
+        /*VENTANAS DEL COCHE Aparecen junto con el techo*/
         .ventana {
             width: 20px;
             height: 15px;
@@ -111,17 +115,19 @@
             animation-delay: 3s;
         }
 
+        /* Ventana izquierda */
         .ventana-izq {
             left: 28px;
             border-radius: 3px 0 0 0;
         }
 
+        /* Ventana derecha */
         .ventana-der {
             right: 38px;
             border-radius: 0 3px 0 0;
         }
 
-        /* Ruedas - aparecen al final */
+        /*RUEDAS DEL COCHE Últimas piezas que se montan (paso 3)*/
         .rueda {
             width: 25px;
             height: 25px;
@@ -135,17 +141,21 @@
             animation: aparecerRueda 0.8s ease-out forwards;
         }
 
+        /* Rueda delantera izquierda */
         .rueda-izq {
             left: 15px;
             animation-delay: 4s;
         }
 
+        /* Rueda trasera derecha */
         .rueda-der {
             right: 15px;
             animation-delay: 4.3s;
         }
 
-        /* Animaciones */
+        /*ANIMACIONES DE LAS PIEZAS*/
+        
+        /* Animación básica de aparición con escalado */
         @keyframes aparecer {
             0% { 
                 opacity: 0;
@@ -157,6 +167,7 @@
             }
         }
 
+        /* Animación de caída con rebote */
         @keyframes caerPieza {
             0% { 
                 opacity: 0;
@@ -171,6 +182,7 @@
             }
         }
 
+        /* Animación de aparición de ruedas con rotación */
         @keyframes aparecerRueda {
             0% { 
                 opacity: 0;
@@ -185,7 +197,7 @@
             }
         }
 
-        /* Brazos robóticos que colocan las piezas */
+        /*BRAZOS ROBÓTICOS Simulan la colocación de piezas (esta echo con IA)*/
         .brazo {
             position: absolute;
             width: 15px;
@@ -196,18 +208,21 @@
             opacity: 0;
         }
 
+        /* Primer brazo - coloca el techo (esta echo con IA) */
         .brazo1 {
             left: 48%;
             animation: moverBrazo 1.5s ease-in-out;
             animation-delay: 2s;
         }
 
+        /* Segundo brazo - coloca las ruedas (esta echo con IA) */
         .brazo2 {
             left: 46%;
             animation: moverBrazo 1.5s ease-in-out;
             animation-delay: 3.5s;
         }
 
+        /* Animación de descenso y ascenso del brazo (esta echo con IA)*/
         @keyframes moverBrazo {
             0%, 100% { 
                 opacity: 0;
@@ -219,7 +234,7 @@
             }
         }
 
-        /* Soporte de la cinta */
+        /*SOPORTES DE LA CINTA Pilares que sostienen la cinta*/
         .soporte {
             position: absolute;
             width: 20px;
@@ -228,13 +243,14 @@
             bottom: 0;
         }
 
+        /* Distribución de los 5 soportes (esta echo con IA)*/
         .soporte1 { left: 10%; }
         .soporte2 { left: 30%; }
         .soporte3 { left: 50%; }
         .soporte4 { left: 70%; }
         .soporte5 { left: 90%; }
 
-        /* Pared de la fábrica */
+        /*PARED DE LA FÁBRICA Fondo superior que simula el techo*/
         .pared {
             position: absolute;
             top: 0;
@@ -245,7 +261,7 @@
             border-bottom: 3px solid #7f8c8d;
         }
 
-        /* Indicador de proceso */
+        /*INDICADORES DE PROCESO Mensajes que muestran cada paso*/
         .proceso {
             position: absolute;
             top: 10px;
@@ -260,10 +276,12 @@
             opacity: 0;
         }
 
+        /* Sincronización de cada mensaje con su paso */
         .paso1 { animation: mostrarPaso 1.5s ease-in-out; animation-delay: 1s; }
         .paso2 { animation: mostrarPaso 1.5s ease-in-out; animation-delay: 2.5s; }
         .paso3 { animation: mostrarPaso 1.5s ease-in-out; animation-delay: 4s; }
 
+        /* Animación de fade in/out para los mensajes */
         @keyframes mostrarPaso {
             0%, 100% { opacity: 0; }
             20%, 80% { opacity: 1; }
@@ -271,38 +289,43 @@
     </style>
 </head>
 <body>
+    <!-- Título principal de la página -->
     <h1 class="titulo">🏭 Línea de Ensamblaje - Montaje Automático</h1>
     
+    <!-- Contenedor principal de la fábrica -->
     <div class="fabrica">
+        <!-- Pared superior de la fábrica -->
         <div class="pared"></div>
 
-        <!-- Indicadores de proceso -->
+        <!-- Indicadores que muestran el progreso del ensamblaje -->
         <div class="proceso paso1">1. Instalando carrocería...</div>
         <div class="proceso paso2">2. Colocando techo...</div>
         <div class="proceso paso3">3. Montando ruedas...</div>
 
-        <!-- Brazos robóticos -->
+        <!-- Brazos robóticos que simulan la instalación -->
         <div class="brazo brazo1"></div>
         <div class="brazo brazo2"></div>
         
-        <!-- Cinta transportadora -->
+        <!-- Cinta transportadora con movimiento continuo -->
         <div class="cinta">
             <div class="cinta-lineas"></div>
         </div>
 
-        <!-- Soportes de la cinta -->
+        <!-- Soportes estructurales de la cinta -->
         <div class="soporte soporte1"></div>
         <div class="soporte soporte2"></div>
         <div class="soporte soporte3"></div>
         <div class="soporte soporte4"></div>
         <div class="soporte soporte5"></div>
 
-        <!-- Coche que se va ensamblando -->
+        <!-- Coche que se va ensamblando pieza por pieza -->
         <div class="coche">
+            <!-- Techo con ventanas -->
             <div class="techo">
                 <div class="ventana ventana-izq"></div>
                 <div class="ventana ventana-der"></div>
             </div>
+            <!-- Carrocería con ruedas -->
             <div class="carroceria">
                 <div class="rueda rueda-izq"></div>
                 <div class="rueda rueda-der"></div>
