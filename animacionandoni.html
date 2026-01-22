@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fábrica - Ensamblaje de Coche</title>
     <style>
+        /* Estilos generales del body - Generado con IA */
         body {
             margin: 0;
             padding: 20px;
@@ -13,6 +14,7 @@
             overflow-x: hidden;
         }
 
+        /* Contenedor principal de la fábrica */
         .fabrica {
             position: relative;
             width: 100%;
@@ -25,6 +27,7 @@
             overflow: hidden;
         }
 
+        /* Título principal de la página */
         .titulo {
             text-align: center;
             font-size: 24px;
@@ -32,7 +35,7 @@
             margin-bottom: 10px;
         }
 
-        /* Cinta transportadora */
+        /* Cinta transportadora principal - Generado con IA */
         .cinta {
             position: absolute;
             bottom: 100px;
@@ -44,7 +47,7 @@
             border-bottom: 3px solid #444;
         }
 
-        /* Líneas de la cinta */
+        /* Líneas animadas de la cinta transportadora */
         .cinta-lineas {
             position: absolute;
             width: 200%;
@@ -59,12 +62,13 @@
             animation: moverCinta 3s linear infinite;
         }
 
+        /* Animación de movimiento de la cinta transportadora - Generado con IA */
         @keyframes moverCinta {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
         }
 
-        /* Contenedor del coche */
+        /* Contenedor del coche que se ensambla */
         .coche {
             position: absolute;
             bottom: 180px;
@@ -72,7 +76,7 @@
             transform: translateX(-50%);
         }
 
-        /* Carrocería - aparece primero */
+        /* Carrocería del coche - Primera pieza en aparecer */
         .carroceria {
             width: 120px;
             height: 40px;
@@ -84,7 +88,7 @@
             animation-delay: 1s;
         }
 
-        /* Techo - aparece segundo */
+        /* Techo del coche - Segunda pieza - Generado con IA */
         .techo {
             width: 60px;
             height: 25px;
@@ -99,7 +103,7 @@
             animation-delay: 2.5s;
         }
 
-        /* Ventanas - aparecen con el techo */
+        /* Ventanas del coche */
         .ventana {
             width: 20px;
             height: 15px;
@@ -111,17 +115,19 @@
             animation-delay: 3s;
         }
 
+        /* Ventana izquierda */
         .ventana-izq {
             left: 28px;
             border-radius: 3px 0 0 0;
         }
 
+        /* Ventana derecha */
         .ventana-der {
             right: 38px;
             border-radius: 0 3px 0 0;
         }
 
-        /* Ruedas - aparecen al final */
+        /* Ruedas del coche - Últimas piezas en montarse - Generado con IA */
         .rueda {
             width: 25px;
             height: 25px;
@@ -135,17 +141,19 @@
             animation: aparecerRueda 0.8s ease-out forwards;
         }
 
+        /* Rueda izquierda */
         .rueda-izq {
             left: 15px;
             animation-delay: 4s;
         }
 
+        /* Rueda derecha */
         .rueda-der {
             right: 15px;
             animation-delay: 4.3s;
         }
 
-        /* Animaciones */
+        /* Animación para piezas que aparecen gradualmente */
         @keyframes aparecer {
             0% { 
                 opacity: 0;
@@ -157,6 +165,7 @@
             }
         }
 
+        /* Animación de caída de piezas desde arriba - Generado con IA */
         @keyframes caerPieza {
             0% { 
                 opacity: 0;
@@ -171,6 +180,7 @@
             }
         }
 
+        /* Animación de aparición de ruedas con rotación - Generado con IA */
         @keyframes aparecerRueda {
             0% { 
                 opacity: 0;
@@ -185,7 +195,7 @@
             }
         }
 
-        /* Brazos robóticos que colocan las piezas */
+        /* Brazos robóticos que colocan las piezas - Generado con IA */
         .brazo {
             position: absolute;
             width: 15px;
@@ -196,18 +206,21 @@
             opacity: 0;
         }
 
+        /* Primer brazo robótico (coloca el techo) */
         .brazo1 {
             left: 48%;
             animation: moverBrazo 1.5s ease-in-out;
             animation-delay: 2s;
         }
 
+        /* Segundo brazo robótico (coloca las ventanas) */
         .brazo2 {
             left: 46%;
             animation: moverBrazo 1.5s ease-in-out;
             animation-delay: 3.5s;
         }
 
+        /* Animación de movimiento de los brazos robóticos */
         @keyframes moverBrazo {
             0%, 100% { 
                 opacity: 0;
@@ -219,7 +232,7 @@
             }
         }
 
-        /* Soporte de la cinta */
+        /* Soportes estructurales de la cinta */
         .soporte {
             position: absolute;
             width: 20px;
@@ -228,13 +241,14 @@
             bottom: 0;
         }
 
+        /* Posiciones de cada soporte */
         .soporte1 { left: 10%; }
         .soporte2 { left: 30%; }
         .soporte3 { left: 50%; }
         .soporte4 { left: 70%; }
         .soporte5 { left: 90%; }
 
-        /* Pared de la fábrica */
+        /* Pared superior de la fábrica */
         .pared {
             position: absolute;
             top: 0;
@@ -245,7 +259,7 @@
             border-bottom: 3px solid #7f8c8d;
         }
 
-        /* Indicador de proceso */
+        /* Indicadores de proceso de ensamblaje - Generado con IA */
         .proceso {
             position: absolute;
             top: 10px;
@@ -260,10 +274,12 @@
             opacity: 0;
         }
 
+        /* Timing de cada paso del proceso */
         .paso1 { animation: mostrarPaso 1.5s ease-in-out; animation-delay: 1s; }
         .paso2 { animation: mostrarPaso 1.5s ease-in-out; animation-delay: 2.5s; }
         .paso3 { animation: mostrarPaso 1.5s ease-in-out; animation-delay: 4s; }
 
+        /* Animación de aparición de los indicadores de proceso */
         @keyframes mostrarPaso {
             0%, 100% { opacity: 0; }
             20%, 80% { opacity: 1; }
@@ -271,44 +287,10 @@
     </style>
 </head>
 <body>
+    <!-- Título principal -->
     <h1 class="titulo">🏭 Línea de Ensamblaje - Montaje Automático</h1>
     
+    <!-- Contenedor principal de la fábrica -->
     <div class="fabrica">
+        <!-- Pared de fondo -->
         <div class="pared"></div>
-
-        <!-- Indicadores de proceso -->
-        <div class="proceso paso1">1. Instalando carrocería...</div>
-        <div class="proceso paso2">2. Colocando techo...</div>
-        <div class="proceso paso3">3. Montando ruedas...</div>
-
-        <!-- Brazos robóticos -->
-        <div class="brazo brazo1"></div>
-        <div class="brazo brazo2"></div>
-        
-        <!-- Cinta transportadora -->
-        <div class="cinta">
-            <div class="cinta-lineas"></div>
-        </div>
-
-        <!-- Soportes de la cinta -->
-        <div class="soporte soporte1"></div>
-        <div class="soporte soporte2"></div>
-        <div class="soporte soporte3"></div>
-        <div class="soporte soporte4"></div>
-        <div class="soporte soporte5"></div>
-
-        <!-- Coche que se va ensamblando -->
-        <div class="coche">
-            <div class="techo">
-                <div class="ventana ventana-izq"></div>
-                <div class="ventana ventana-der"></div>
-            </div>
-            <div class="carroceria">
-                <div class="rueda rueda-izq"></div>
-                <div class="rueda rueda-der"></div>
-            </div>
-        </div>
-    </div>
-
-</body>
-</html>
